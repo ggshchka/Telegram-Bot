@@ -3,6 +3,9 @@ import youtube_dl
 import os
 
 def convert(url):
+	dirName = 'mp3'
+	if not os.path.exists(dirName):
+		os.mkdir(dirName)
 	options = {
 		'outtmpl': unicode('./mp3/%(title)s.%(ext)s'),
 	    'format': 'bestaudio/best',
